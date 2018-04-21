@@ -11,7 +11,7 @@ var jwt = require('jsonwebtoken');
 var dotenv = require('dotenv').config();
 var mongoose = require('mongoose');
 
-mongoose.connect(process.env.mongoDB, (err, database) => {
+mongoose.connect(process.env.mongoDB, {autoIndex: false}, (err, database) => {
     if(err) throw err;
     console.log('Connected to database.');
     db = database;
